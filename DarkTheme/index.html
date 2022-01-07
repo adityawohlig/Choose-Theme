@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This site is built by Aditya B to test dark theme and SEO concepts.">
+    <meta name="author" content = "Aditya">
+    <meta property="og:title" content="Dark Theme" />
+<meta property="og:description" content="This site is built by Aditya B to test dark theme and SEO concepts." />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="styles/style.css">
+    <title>Dark Theme</title>
+</head>
+<body class = "cnt">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Choose Your Theme</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home</a>
+ 
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container">
+        <div class="row">
+            
+          <div class="col">
+            <h3>Bg Colors</h3>
+            <button onclick = "myfunc()" class="black">dark</button>
+            <button onclick = "myfunc2()" class = "gold">gold</button>
+            <button onclick = "myfunc3()" class = "white">white</button>
+
+            
+
+          </div>
+          <div class="col"><h3>Font Colors</h3>
+            <button onclick = "myfunc4()" class = "blue">blue</button>
+            <button onclick = "myfunc5()" class = "tomato">tomato</button>
+            <button onclick = "myfunc6()" class = "white">white</button>
+            <br>
+            <label for="colorWell">Color:</label>
+            <input type="color" value="#ff0000" id="colorWell">
+        </div>
+        
+      </div>
+      <br>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore id magni vel quasi, 
+          asperiores itaque incidunt repudiandae quidem rem mollitia veniam cumque, aliquam voluptatibus 
+          ipsam eos earum dicta consequatur enim nostrum porro assumenda? Expedita fugiat placeat beatae 
+          tenetur aperiam esse facilis assumenda enim. Natus voluptatibus a enim nihil similique quo assumenda 
+          repellat laudantium ex maxime atque cupiditate dolorem rem nostrum in quas sed velit modi soluta veritatis, 
+          vel porro facere reprehenderit non? Ex laboriosam vero corrupti expedita at nobis dolore ullam sapiente nostrum, 
+          ad dolorum atque sunt totam minus soluta aut non doloremque blanditiis repudiandae nulla. Nam consequatur perspiciatis vel.
+      
+      <br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, a enim. Quo ullam quas quam odit consectetur ut adipisci 
+          rerum, delectus, animi quis non temporibus cum quibusdam. Molestias, nesciunt ipsam.<br>
+
+    <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis magnam eius rem veniam accusantium nesciunt repudiandae,
+         unde molestias libero aperiam, sed laborum facilis rerum similique iure? Molestiae dignissimos reiciendis exercitationem incidunt
+          reprehenderit hic quos praesentium, perferendis eos similique. Placeat repudiandae vel nesciunt tempora laudantium. Sequi magni 
+          ullam, nobis quia ut, ab architecto earum optio minus eos dolorem hic! Impedit molestias eos eum fuga, aliquam voluptatem aut 
+          tenetur placeat tempore commodi nam quibusdam ducimus cupiditate. Ipsam cum facere beatae reiciendis animi ipsa rerum deserunt 
+          repudiandae iste quis sit saepe ducimus iure corrupti accusantium sunt itaque, cumque maxime. Unde, laboriosam. Quia commodi cumque 
+          autem maxime earum repudiandae rem modi ipsam doloribus quasi perspiciatis, sunt, illum maiores odit reprehenderit quaerat qui? Vero 
+          laboriosam impedit ipsam quis culpa, omnis sint alias veniam accusantium commodi deleniti cupiditate, maiores atque dolore! Excepturi 
+          maxime commodi culpa perspiciatis? Quod maiores excepturi ipsam accusantium, veniam, reiciendis autem laboriosam id reprehenderit eveniet, 
+          eligendi sequi saepe magni iusto molestias. Temporibus labore distinctio soluta deserunt, veniam ea aspernatur ullam perferendis architecto 
+          nobis rem, dolor rerum dolorem, exercitationem non! Modi ipsam culpa, similique facere ipsa mollitia beatae provident molestias vero 
+          officiis? Fugit quos ratione amet perferendis incidunt, magni repellendus autem maxime pariatur aut maiores hic repellat non dolorum 
+          suscipit debitis nulla ea?</p>
+    
+
+    <script>
+        // reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
+
+        var colorWell;
+        var defaultColor = "#0000ff";
+
+        window.addEventListener("load", startup, false);
+        // The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images. This is in contrast to DOMContentLoaded, which is fired as soon as the page DOM has been loaded, without waiting for resources to finish loading.
+
+        function startup() {
+        colorWell = document.querySelector("#colorWell");
+        colorWell.value = defaultColor;
+        colorWell.addEventListener("input", updateFirst, false);
+        colorWell.addEventListener("change", updateAll, false);
+        colorWell.select();
+        }
+
+
+        function updateFirst(event) {
+        var p = document.querySelector("p");
+
+        if (p) {
+            p.style.color = event.target.value;
+        }
+        }
+
+        function updateAll(event) {
+        document.querySelectorAll("p").forEach(function(p) {
+            p.style.color = event.target.value;
+        });
+        }
+
+
+
+        var r = document.querySelector(":root");
+        var rs = getComputedStyle(r);
+
+        function myfunc(){
+            console.log("heyAdi");
+            var b = rs.getPropertyValue("--bgcolor1");
+            document.querySelector(".cnt").style.backgroundColor = b ;
+        }
+
+        function myfunc2(){
+            
+            var b = rs.getPropertyValue("--bgcolor2");
+            document.querySelector(".cnt").style.backgroundColor = b ;
+        }
+
+        function myfunc3(){
+            
+            var b = rs.getPropertyValue("--bgcolor3");
+            document.querySelector(".cnt").style.backgroundColor = b ;
+        }
+
+        function myfunc4(){
+            
+            var b = rs.getPropertyValue("--fntcolor1");
+            document.querySelector("p").style.color = b ;
+        }
+
+        function myfunc5(){
+            
+            var b = rs.getPropertyValue("--fntcolor2");
+            document.querySelector("p").style.color = b ;
+        }
+
+        function myfunc6(){
+            
+            var b = rs.getPropertyValue("--fntcolor3");
+            document.querySelector("p").style.color = b ;
+        }
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

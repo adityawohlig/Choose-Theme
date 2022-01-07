@@ -1,0 +1,54 @@
+:root
+{
+    --bgcolor1: rgb(26, 25, 25);
+    --bgcolor2: gold;
+    --bgcolor3: white;
+    --fntcolor1: dodgerblue;
+    --fntcolor2: tomato;
+    --fntcolor3: white;
+}
+
+.navbar, a{
+background-color: var(--bgcolor1);
+color: var(--fntcolor3);    
+}
+
+
+.black{
+    border-color: silver;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.gold{
+    border-color: silver;
+    color: whitesmoke;
+    background-color: var(--bgcolor2);
+    
+}
+
+.white{
+    border-color: silver;
+    color: black;
+    background-color: white;
+}
+
+.tomato{
+    border-color: silver;
+    background-color: var(--fntcolor2);
+}
+
+.blue{
+    border-color: silver;
+    background-color: var(--fntcolor1);
+}
+
+h3, p{
+    color: var(--fntcolor1);
+}
+
+label, input{
+   color: wheat;
+    margin: 1rem;
+    padding: 1rem;
+}
